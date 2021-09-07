@@ -28,10 +28,16 @@ function App() {
     day: 'Feb 6th at 7:30pm',
     reminder: false, 
   }])
+
+  // DELETE TASK FUNCTION
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id ))
+  }
   return (
     <div className='container'> 
       <Header /> {/* You then need to declare the Header above like this */}
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }
