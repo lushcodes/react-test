@@ -37,7 +37,7 @@ function App() {
   return (
     <div className='container'> 
       <Header /> {/* You then need to declare the Header above like this */}
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      { tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} />) : ('No Tasks added')}
     </div>
   );
 }
